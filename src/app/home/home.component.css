@@ -1,0 +1,50 @@
+.accordion {
+  background-color: #eee;
+  color: #444;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.panel {
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  overflow: hidden;
+  position: absolute;
+}
+
+.home-accordion {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  right: 0;
+}
+
+ /*  */
+
+.accordion1 {
+  background-color: gray;
+  color: white;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  border: 1px solid #eee;
+}
+
+.panel1 {
+  padding: 10px;
+  background-color: #eee;
+  color: #444;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.home-accordion1 {
+    position: relative;
+  }

@@ -1,0 +1,22 @@
+<div class="horizontal-accodion-panel" [style.width.px]="param.accordionContainerWidth" [style.height.px]="param.accordionContainerHeight">
+  <div class="accordion-title" [style.width.px]="param.accordionContainerWidth" [style.height.px]="param.accordionTitleHeight">{{param.accordionTitle}}</div>
+  <div class="accordion-bar-container" [style.height.px]="param.accordionContainerHeight - param.accordionTitleHeight">
+    <div class="accordion-bar" *ngFor="let item of param.accordionData; let i = index" [style.margin.px]="param.accordionBarMargin" [@menuSlider]="item.status?'open':'close'"
+      (@menuSlider.done)="animationOver($event)" (@menuSlider.start)="animationStart($event)" [style.height.px]="accordionBarModifiedHeight"
+      (click)="!animationInProcess && selectAccordionPanelTab($event, param.accordionData, item, item.id)">
+      <div class="title-bar" [style.width.px]="param.accordionBarWidth - 4" [style.height.px]="accordionBarModifiedHeight - 4">
+        <label class="container" *ngIf="param.checkBox" [style.left.px]="param.checkBoxLeft" [style.top.px]="param.checkBoxTop">
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <div class="section-title rotate" [style.width.px]="param.accordionContainerHeight - param.accordionTitleHeight" [style.top.px]="param.accordionBarTitleTop" [style.left.px]="param.accordionBarTitleLeft">{{item.tabName}}</div>
+      </div>
+      <div class="section-content-holder" [style.left.px]="param.accordionBarWidth - 2" [style.height.px]="accordionBarModifiedHeight - 4"
+        [style.width.px]="accordionBarWidthWithContent">
+        <div class="section-content" [style.height.px]="accordionBarModifiedHeight - 4" [style.width.px]="accordionBarWidthWithContent">
+          {{item.data}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

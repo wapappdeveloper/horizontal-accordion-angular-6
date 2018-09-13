@@ -1,0 +1,52 @@
+<div class="home-accordion">
+  <div class="accordion">
+    <span>Tony Stark</span>
+    <button class="title" (click)="togglePanel()">Toggle Panel</button>
+  </div>
+  <div [@changeState]="states" class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+  </div>
+</div>
+
+<!-- <div class="home-accordion1" *ngFor="let item of tabData">
+  <div class="accordion1" (click)="toggleTab(item.tabName)">
+    <span>{{item.tabName}}</span>
+  </div>
+  <div [@changeState1]="states1" *ngIf="currentTab === item.tabName" class="panel1">
+    <p>{{item.detail}}</p>
+  </div>
+</div> -->
+
+
+<!-- <div class="srk-menu-slider">
+  <div class="srk-sliding-container">
+    <ul>
+      <li [@menuSlider]='side' *ngFor="let item of menuList" (click)="changeTab(item.tabName)" [ngClass]="{'active' : item.tabName === currentSelectedTab}">
+        <a>{{item.tabName}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="srk-icon-nav">
+    <span (click)="moveLeft()">&lArr;</span>
+    <span (click)="moveRight()">&rArr;</span>
+  </div>
+</div> -->
+
+<!-- <app-home></app-home> -->
+
+<!-- animations: [
+  trigger('menuSlider', [
+    state('left', style({
+      transform: 'translateX(0)'
+    })),
+    state('right', style({
+      transform: 'translateX(-200%)'
+      transform: 'translateX(' + this.value + ')'
+    })),
+    transition('left => right', animate('1000ms ease-in')),
+    transition('right => left', animate('1000ms ease-in')),
+  ]),
+] -->
