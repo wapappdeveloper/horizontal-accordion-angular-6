@@ -45,7 +45,7 @@ export class DynamicAccordionComponent implements OnInit {
   margin: any = 1;
 
   animationInProcess: boolean = false;
-
+  /**Dont modify this data, this is default */
   defaultParam: any = {
     accordionTitle: 'Dynamic Accordion Demo',
     accordionTitleHeight: 40,
@@ -126,6 +126,11 @@ export class DynamicAccordionComponent implements OnInit {
       accordionData[i].status = false;
     }
     item.status = true;
+    this.emitter.emit({eventName:'selectAccordionPanelTab',event:event,item:item});
+  }
+
+  checkboxClicked(event){
+    this.emitter.emit({eventName:'checkboxClicked',event:event,item:null});
   }
 
   transform(html: string): SafeHtml {

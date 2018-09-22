@@ -8,10 +8,11 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from '@angular/forms';
 
 import { CalendarModule } from "primeng/calendar";
+import { ClickStopPropagation } from "./stop-propagation.directive";
 
 @NgModule({
   imports: [CommonModule, CalendarModule, FormsModule],
-  declarations: [DynamicAccordionComponent],
+  declarations: [DynamicAccordionComponent, ClickStopPropagation],
   exports: [DynamicAccordionComponent]
 })
 export class DynamicAccordionModule {}

@@ -6,7 +6,7 @@
       (click)="!animationInProcess && selectAccordionPanelTab($event, param.accordionData, item, item.id)">
       <div class="title-bar" [style.width.px]="param.accordionBarWidth - 4" [style.height.px]="accordionBarModifiedHeight - 4">
         <label class="container" *ngIf="param.checkBox" [style.left.px]="param.checkBoxLeft" [style.top.px]="param.checkBoxTop">
-          <input type="checkbox" checked="checked">
+          <input type="checkbox" checked="checked" (change)="checkboxClicked($event)">
           <span class="checkmark"></span>
         </label>
         <div class="section-title rotate" [style.width.px]="param.accordionContainerHeight - param.accordionTitleHeight" [style.top.px]="param.accordionBarTitleTop" [style.left.px]="param.accordionBarTitleLeft">{{item.tabName}}</div>
