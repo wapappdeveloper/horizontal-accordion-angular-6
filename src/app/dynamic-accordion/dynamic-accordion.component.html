@@ -13,8 +13,13 @@
       </div>
       <div class="section-content-holder" [style.left.px]="param.accordionBarWidth - 2" [style.height.px]="accordionBarModifiedHeight - 4"
         [style.width.px]="accordionBarWidthWithContent">
-        <div class="section-content" [style.height.px]="accordionBarModifiedHeight - 4" [style.width.px]="accordionBarWidthWithContent">
-          {{item.data}}
+        <div *ngIf="item.contentType==='html'" class="section-content" [style.height.px]="accordionBarModifiedHeight - 4" [style.width.px]="accordionBarWidthWithContent" [innerHTML]="transform(item.content)">
+        </div>
+        <div *ngIf="item.contentType!=='html'" class="section-content" [style.height.px]="accordionBarModifiedHeight - 4" [style.width.px]="accordionBarWidthWithContent">
+          {{item.content}}
+        </div>
+        <div *ngIf="item.contentType==='comp'" class="section-content" [style.height.px]="accordionBarModifiedHeight - 4" [style.width.px]="accordionBarWidthWithContent">
+          <p-calendar [(ngModel)]="value" [inline]="true"></p-calendar>
         </div>
       </div>
     </div>

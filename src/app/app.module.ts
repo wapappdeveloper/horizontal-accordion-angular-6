@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { DynamicAccordionComponent } from './dynamic-accordion/dynamic-accordion.component';
 import { FormsModule } from '@angular/forms';
+import { DynamicAccordionModule } from './dynamic-accordion/dynamic-accordion.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DynamicAccordionComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    DynamicAccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
